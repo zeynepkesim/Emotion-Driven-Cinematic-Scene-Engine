@@ -43,7 +43,7 @@ way to journal a mood than a plain text note.
 ## Project layout
 
 ```
-Alpha_Version/
+Emotion-Driven-Cinematic-Scene-Engine/
 ├── main.py             # Desktop entry point — calls ui.run()
 ├── ui.py               # Tkinter UI: input, scene panel, swatches,
 │                       # image panel with click-to-enlarge, history
@@ -85,8 +85,8 @@ tier:
 ### Install
 
 ```bash
-git clone <this repo>
-cd Alpha_Version
+git clone https://github.com/zeynepkesim/Emotion-Driven-Cinematic-Scene-Engine.git
+cd Emotion-Driven-Cinematic-Scene-Engine
 python -m venv venv
 source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -122,9 +122,9 @@ scene and image appear.
 python app.py
 ```
 
-Flask starts on http://127.0.0.1:5000. Open that in any browser. The
-form is the same idea as the desktop app, but it works without Python
-installed on the user's side — anyone on your network can hit the URL.
+Flask starts on http://127.0.0.1:5000. Open that in any browser on the
+same machine. The form is the same idea as the desktop app, in a browser
+instead of a desktop window.
 
 ## Using the app
 
@@ -154,7 +154,7 @@ installed on the user's side — anyone on your network can hit the URL.
 The app tries to give a clear, actionable message instead of a Python
 traceback.
 
-**Groq (text generation):**
+**Groq (text generation, desktop app):**
 
 | Cause | Message shown |
 |---|---|
@@ -172,6 +172,9 @@ traceback.
 | Daily quota exhausted | `Daily Cloudflare AI quota reached. Try again tomorrow.` |
 | Timeout | `Image generation timed out. Try again in a moment.` |
 | No internet | `Could not reach the image service. Check your connection.` |
+
+In the web app, Groq errors are shown with the message returned by the
+service.
 
 If the image fails, the scene itself is still shown — it just carries a
 short note in place of the image. Nothing in the app ever crashes
